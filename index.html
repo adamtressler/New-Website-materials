@@ -14,7 +14,19 @@
 
 <body>
 
-<section class="hero">
+<nav class="site-nav" aria-label="Primary navigation">
+    <a class="site-nav-brand" href="#top">ADAM TRESSLER</a>
+    <button class="site-nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav-links">MENU</button>
+    <div class="site-nav-links" id="site-nav-links">
+        <a href="#media">MEDIA</a>
+        <a href="#instruments">INSTRUMENTS</a>
+        <a href="#film-tv">FILM + TV</a>
+        <a href="#presidents">PRESIDENTS</a>
+        <a href="#contact">CONTACT</a>
+    </div>
+</nav>
+
+<section id="top" class="hero">
 
     <img src="images/hero/hero.jpg" alt="Adam Tressler">
 
@@ -27,8 +39,9 @@
         <p>Musician • Songwriter • Guitar Coach</p>
 
         <div class="buttons">
-            <a href="#">Listen</a>
-            <a href="#">Watch</a>
+            <a href="#media">Listen</a>
+            <a href="#media">Watch</a>
+            <a href="mailto:adamtressler@gmail.com">Contact</a>
         </div>
 
     </div>
@@ -48,10 +61,223 @@ and Kacey Musgraves.
 <div class="buttons">
 </div>
 
-<section class="listen">
-    <h2>Listen</h2>
+<section id="media" class="media-section listen">
+    <h2>MEDIA</h2>
+    <h3>LISTEN</h3>
     <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0iMzFu1Ol5fnaAuGmfTwWT?utm_source=generator&theme=0&si=5fad30ab99c3497f" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+    <div class="watch-heading">
+        <div>
+            <h3>WATCH</h3>
+            <p>Selected performances, sessions &amp; appearances.</p>
+        </div>
+        <div class="watch-controls" aria-label="Video carousel controls">
+            <button class="watch-control watch-previous" type="button" aria-label="Previous videos">←</button>
+            <button class="watch-control watch-next" type="button" aria-label="Next videos">→</button>
+        </div>
+    </div>
+
+    <div class="watch-carousel" tabindex="0">
+        <a class="watch-video" href="https://youtu.be/IY87YLynIg8" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.youtube.com/vi/IY87YLynIg8/hqdefault.jpg" alt="Wicked: One Wonderful Night">
+            <span>Wicked: One Wonderful Night</span>
+        </a>
+        <a class="watch-video" href="https://youtu.be/Egim0vPJlyU" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.youtube.com/vi/Egim0vPJlyU/hqdefault.jpg" alt="Carly Pearce">
+            <span>Carly Pearce</span>
+        </a>
+        <a class="watch-video" href="https://youtu.be/pSKf1cSw0JE" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.youtube.com/vi/pSKf1cSw0JE/hqdefault.jpg" alt="Aimee Mann">
+            <span>Aimee Mann</span>
+        </a>
+        <a class="watch-video" href="https://youtu.be/1nRNJmZyXcE" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.youtube.com/vi/1nRNJmZyXcE/hqdefault.jpg" alt="Selena Gomez">
+            <span>Selena Gomez</span>
+        </a>
+        <a class="watch-video" href="https://youtu.be/X9AiClSpubc" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.youtube.com/vi/X9AiClSpubc/hqdefault.jpg" alt="Kacey Musgraves">
+            <span>Kacey Musgraves</span>
+        </a>
+        <a class="watch-video" href="https://www.youtube.com/watch?t=212&v=W3NV6gY2mlI" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.youtube.com/vi/W3NV6gY2mlI/hqdefault.jpg" alt="LP">
+            <span>LP</span>
+        </a>
+    </div>
 </section>
+
+<section id="instruments" class="collection">
+    <h2>The Instrument Collection</h2>
+
+    <details class="instrument-category">
+        <summary>Guitars &amp; Basses</summary>
+        <div class="instrument-grid">
+            <div class="instrument-item"><span>Electric guitars</span></div>
+            <div class="instrument-item"><span>335</span><a href="https://youtube.com/shorts/fhKDh-uqYe0">WATCH</a></div>
+            <div class="instrument-item"><span>les paul</span><a href="https://youtu.be/-eJWIbqvbno">WATCH</a></div>
+            <div class="instrument-item"><span>tele</span></div>
+            <div class="instrument-item"><span>strat</span></div>
+            <div class="instrument-item"><span>‘60s Harmony Rocket</span></div>
+            <div class="instrument-item"><span>80s shredder</span></div>
+            <div class="instrument-item"><span>my 1st guitar</span><a href="https://youtu.be/Fo4Nv1O6_JE">WATCH</a></div>
+            <div class="instrument-item"><span>Martin acoustic guitars</span></div>
+            <div class="instrument-item"><span>Nylon string</span></div>
+            <div class="instrument-item"><span>Rubber-bridge acoustic (60s Kay)</span><a href="https://youtu.be/Ftyqnj6k-Ac">WATCH</a></div>
+            <div class="instrument-item"><span>7-string electric</span></div>
+            <div class="instrument-item"><span>Electric bass</span></div>
+            <div class="instrument-item"><span>Fretless acoustic bass</span></div>
+            <div class="instrument-item"><span>Bari-tenor (‘60s Harmony, w/ rubber bridge)</span><a href="https://youtu.be/AhwN8kEliK0">WATCH</a></div>
+            <div class="instrument-item"><span>Baritone acoustic</span><a href="https://youtu.be/eddJWZ0hfQY">WATCH</a></div>
+            <div class="instrument-item"><span>Baritone electric</span><a href="https://youtu.be/jW0Zct1Nu1g">WATCH</a></div>
+            <div class="instrument-item"><span>Bass VI</span></div>
+            <div class="instrument-item"><span>High-string acoustic</span><a href="https://youtu.be/Qpo2ITD5ywQ">WATCH</a></div>
+            <div class="instrument-item"><span>Vintage jazz archtop acoustic</span></div>
+            <div class="instrument-item"><span>Autoharp</span></div>
+            <div class="instrument-item"><span>MIDI guitar</span></div>
+            <div class="instrument-item"><span>12-string Electric</span></div>
+            <div class="instrument-item"><span>High-string electric</span><a href="https://youtu.be/y9o52rLyP5E">WATCH</a></div>
+            <div class="instrument-item"><span>12 string acoustic</span><a href="https://youtu.be/KoAtDySCKNk">WATCH</a></div>
+            <div class="instrument-item"><span>Dobro (National)</span><a href="https://youtu.be/6FH5WnwSWqk">WATCH</a></div>
+        </div>
+    </details>
+
+    <details class="instrument-category">
+        <summary>Mandolins &amp; Banjos</summary>
+        <div class="instrument-grid">
+            <div class="instrument-item"><span>Mandolin</span><a href="https://youtu.be/3949YxbIBzI">WATCH</a></div>
+            <div class="instrument-item"><span>Mandola</span><a href="https://youtu.be/h4UL__qqmwA">WATCH</a></div>
+            <div class="instrument-item"><span>Electric mandola</span></div>
+            <div class="instrument-item"><span>Octave Mandolin</span><a href="https://youtu.be/C6tId9M2-3c">WATCH</a></div>
+            <div class="instrument-item"><span>Mandocello</span></div>
+            <div class="instrument-item"><span>1930’s banj-olin</span></div>
+            <div class="instrument-item"><span>Bluegrass banjo</span><a href="https://youtu.be/2p3OI6-crzc">WATCH</a></div>
+            <div class="instrument-item"><span>Clawhammer banjo</span><a href="https://youtu.be/PFlt8GVPlYI">WATCH</a></div>
+            <div class="instrument-item"><span>Woodbodied banjo</span><a href="https://youtu.be/cxUSO7rGjTw">WATCH</a></div>
+            <div class="instrument-item"><span>Piccolo banjo</span><a href="https://youtu.be/vtdkLwJLFYE">WATCH</a></div>
+            <div class="instrument-item"><span>Cello banjo</span><a href="https://youtu.be/Ps9fGTK0tlg">WATCH</a></div>
+            <div class="instrument-item"><span>1930s Gretsch tenor banjo</span><a href="https://youtu.be/KBdKWk-ix2g">WATCH</a></div>
+            <div class="instrument-item"><span>Banjitar</span></div>
+            <div class="instrument-item"><span>7-string Banjitar</span></div>
+            <div class="instrument-item"><span>Long-neck Seeger-style Banjo</span></div>
+            <div class="instrument-item"><span>Fretless banjo</span><a href="https://youtu.be/vETMd077iN0">WATCH</a></div>
+        </div>
+    </details>
+
+    <details class="instrument-category">
+        <summary>World &amp; Historical Instruments</summary>
+        <div class="instrument-grid">
+            <div class="instrument-item"><span>‘40s lap steel</span></div>
+            <div class="instrument-item"><span>Fretless guitar</span><a href="https://youtube.com/shorts/LbSM64vHDzQ?feature=share">WATCH</a></div>
+            <div class="instrument-item"><span>Electric sitar</span><a href="https://youtu.be/sU5j5ndvWfM">WATCH</a></div>
+            <div class="instrument-item"><span>Standard ukulele</span><a href="https://youtu.be/D-IafKuc_ag">WATCH</a></div>
+            <div class="instrument-item"><span>Tenor Ukulele</span><a href="https://youtube.com/shorts/j2Ry3FBK8pM?feature=share">WATCH</a></div>
+            <div class="instrument-item"><span>‘20s banjo-lele</span><a href="https://youtu.be/MiBjAqNH4kE">WATCH</a></div>
+            <div class="instrument-item"><span>7-course Lute</span><a href="https://youtu.be/XluMqKHA34I">WATCH</a></div>
+            <div class="instrument-item"><span>Mountain Dulcimer</span><a href="https://youtu.be/phrdTxFYLo4">WATCH</a></div>
+            <div class="instrument-item"><span>Chromatic Hammer Dulcimer</span><a href="https://youtu.be/1zV0qvEdOVE">WATCH</a></div>
+            <div class="instrument-item"><span>Tiple(Puerto Rico)</span><a href="https://youtu.be/ePomxY4PCqM">WATCH</a></div>
+            <div class="instrument-item"><span>Sanshin (Japan)</span><a href="https://youtu.be/vMOcYN0sRyQ">WATCH</a></div>
+            <div class="instrument-item"><span>Shamisen(Japan)</span></div>
+            <div class="instrument-item"><span>Pipa (China)</span><a href="https://youtu.be/WHKXzAFvyWw">WATCH</a></div>
+            <div class="instrument-item"><span>Ruan (China)</span><a href="https://youtu.be/afzizmCL3BU">WATCH</a></div>
+            <div class="instrument-item"><span>Erhu(China)</span></div>
+            <div class="instrument-item"><span>Liuqin(China)</span></div>
+            <div class="instrument-item"><span>Cumbus (Turkey)</span><a href="https://youtube.com/shorts/qG6G-WNteTA?feature=share">WATCH</a></div>
+            <div class="instrument-item"><span>Oud (Turkey)</span><a href="https://youtu.be/zw351NqY4n0">WATCH</a></div>
+            <div class="instrument-item"><span>Bouzouki (Greece)</span><a href="https://youtu.be/yKI2SyEYHxU">WATCH</a></div>
+            <div class="instrument-item"><span>Bandurria(Spain)</span><a href="https://youtu.be/hlkdpSkhg6E">WATCH</a></div>
+            <div class="instrument-item"><span>Charango(Peru)</span><a href="https://youtu.be/ve5nxIpKPck">WATCH</a></div>
+        </div>
+    </details>
+</section>
+
+<section id="film-tv" class="film-television">
+    <h2>FILM + TELEVISION</h2>
+
+    <div class="film-grid">
+        <article class="film-card">
+            <img src="images/film-tv/A Complete Unknown.webp" alt="A Complete Unknown poster">
+            <div class="film-card-overlay"><h3>A Complete Unknown</h3><p>Guitar Coach / Musician</p></div>
+        </article>
+        <article class="film-card">
+            <img src="images/film-tv/On Swift Horses.jpg" alt="On Swift Horses poster">
+            <div class="film-card-overlay"><h3>On Swift Horses</h3><p>Bandurria Coach</p></div>
+        </article>
+        <article class="film-card">
+            <img src="images/film-tv/Euphoria.jpeg.webp" alt="Euphoria poster">
+            <div class="film-card-overlay"><h3>Euphoria</h3><p>On Screen</p></div>
+        </article>
+        <article class="film-card">
+            <img src="images/film-tv/Palm Royale 2.jpg.webp" alt="Palm Royale poster">
+            <div class="film-card-overlay"><h3>Palm Royale</h3><p>On Screen</p></div>
+        </article>
+        <article class="film-card">
+            <img src="images/film-tv/Wicked One Wonderful Night.jpg" alt="Wicked: One Wonderful Night poster">
+            <div class="film-card-overlay"><h3>Wicked: One Wonderful Night</h3><p>On Screen / Musician</p></div>
+        </article>
+        <article class="film-card">
+            <img src="images/film-tv/Birds of Prey.jpg" alt="Birds of Prey poster">
+            <div class="film-card-overlay"><h3>Birds of Prey</h3><p>Score / Session</p></div>
+        </article>
+        <article class="film-card">
+            <img src="images/film-tv/Modern Family.jpg" alt="Modern Family poster">
+            <div class="film-card-overlay"><h3>Modern Family</h3><p>Score / Session</p></div>
+        </article>
+        <article class="film-card">
+            <img src="images/film-tv/Emily in Paris.jpeg" alt="Emily in Paris poster">
+            <div class="film-card-overlay"><h3>Emily in Paris</h3><p>Score / Session</p></div>
+        </article>
+        <article class="film-card">
+            <img src="images/film-tv/Lovecraft Country.jpg" alt="Lovecraft Country poster">
+            <div class="film-card-overlay"><h3>Lovecraft Country</h3><p>Score / Session</p></div>
+        </article>
+        <article class="film-card">
+            <img src="images/film-tv/911.jpg" alt="911 poster">
+            <div class="film-card-overlay"><h3>911</h3><p>Score / Session</p></div>
+        </article>
+        <article class="film-card">
+            <img src="images/film-tv/Merry Happy Whatever.jpg" alt="Merry Happy Whatever poster">
+            <div class="film-card-overlay"><h3>Merry Happy Whatever</h3><p>Guitar Coach</p></div>
+        </article>
+    </div>
+</section>
+
+<section id="presidents" class="presidents">
+    <h2>Songs About Presidents</h2>
+    <p class="presidents-intro">Since 2017, I've been writing and recording biographical albums about American presidents and First Ladies. What started as a songwriting experiment became an ongoing passion project—six albums so far, with more on the way.</p>
+
+    <div class="presidents-carousel-controls" aria-label="Album carousel controls">
+        <button class="watch-control presidents-previous" type="button" aria-label="Previous albums">←</button>
+        <button class="watch-control presidents-next" type="button" aria-label="Next albums">→</button>
+    </div>
+
+    <div class="album-list">
+        <article class="album-entry">
+            <iframe style="border: 0; width: 400px; height: 472px;" src="https://bandcamp.com/EmbeddedPlayer/album=2124505251/size=large/bgcol=ffffff/linkcol=0687f5/artwork=large/transparent=true/" seamless><a href="https://adamtressler.bandcamp.com/album/the-life-and-times-of-benjamin-harrison">The Life and Times of Benjamin Harrison by Adam Tressler</a></iframe>
+        </article>
+        <article class="album-entry">
+            <iframe style="border: 0; width: 400px; height: 472px;" src="https://bandcamp.com/EmbeddedPlayer/album=611763733/size=large/bgcol=ffffff/linkcol=0687f5/artwork=large/transparent=true/" seamless><a href="https://adamtressler.bandcamp.com/album/songs-about-lincoln">Songs About Lincoln by Adam Tressler</a></iframe>
+        </article>
+        <article class="album-entry">
+            <iframe style="border: 0; width: 400px; height: 472px;" src="https://bandcamp.com/EmbeddedPlayer/album=3979928956/size=large/bgcol=ffffff/linkcol=0687f5/artwork=large/transparent=true/" seamless><a href="https://adamtressler.bandcamp.com/album/lesser-known-presidents">Lesser Known Presidents by Adam Tressler</a></iframe>
+        </article>
+        <article class="album-entry">
+            <iframe style="border: 0; width: 400px; height: 439px;" src="https://bandcamp.com/EmbeddedPlayer/album=3945119905/size=large/bgcol=ffffff/linkcol=0687f5/artwork=large/transparent=true/" seamless><a href="https://adamtressler.bandcamp.com/album/mckinley-lesser-known-president">McKinley: Lesser Known President by Adam Tressler</a></iframe>
+        </article>
+        <article class="album-entry">
+            <iframe style="border: 0; width: 400px; height: 472px;" src="https://bandcamp.com/EmbeddedPlayer/album=3889665104/size=large/bgcol=ffffff/linkcol=0687f5/artwork=large/transparent=true/" seamless><a href="https://adamtressler.bandcamp.com/album/jimmy-from-plains">Jimmy From Plains by Adam Tressler</a></iframe>
+        </article>
+        <article class="album-entry">
+            <iframe style="border: 0; width: 400px; height: 472px;" src="https://bandcamp.com/EmbeddedPlayer/album=4154957162/size=large/bgcol=ffffff/linkcol=0687f5/artwork=large/transparent=true/" seamless><a href="https://adamtressler.bandcamp.com/album/first-ladies">First Ladies by Adam Tressler</a></iframe>
+        </article>
+    </div>
+</section>
+
+<section id="contact" class="contact-section">
+    <p>Please feel free to get in touch with any questions or inquiries.</p>
+    <a class="contact-email" href="mailto:adamtressler@gmail.com">CONTACT ME →</a>
+</section>
+
+<footer class="site-footer">© 2026 Adam Tressler</footer>
 
 <script src="js/script.js"></script>
 
