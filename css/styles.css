@@ -187,6 +187,25 @@ p{
     text-transform:uppercase;
 }
 
+.media-listen-heading{
+    margin-bottom:25px;
+}
+
+.media-listen-heading h3{
+    margin-bottom:14px;
+    font-size:1rem;
+    font-weight:400;
+    letter-spacing:.16em;
+}
+
+.media-listen-heading p{
+    margin:0;
+    color:#aaa;
+    font-size:.85rem;
+    letter-spacing:.04em;
+    text-transform:none;
+}
+
 .media-section .watch-heading{
     margin-top:75px;
 }
@@ -280,6 +299,10 @@ p{
 
 .instrument-item a:hover{
     color:#aaa;
+}
+
+.collection .instrument-item a{
+    color:#e7dfad;
 }
 
 .film-television{
@@ -383,23 +406,12 @@ p{
 }
 
 .presidents .album-list{
-    display:flex;
-    gap:22px;
-    overflow-x:auto;
-    scroll-behavior:smooth;
-    scrollbar-width:thin;
-    scrollbar-color:#555 transparent;
-}
-
-.presidents-carousel-controls{
-    display:flex;
-    justify-content:flex-end;
-    gap:10px;
-    margin-bottom:22px;
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:28px 22px;
 }
 
 .presidents .album-entry{
-    flex:0 0 calc((100% - 44px) / 3);
     max-width:none;
     min-width:0;
 }
@@ -658,11 +670,11 @@ margin:8px;
     margin:0 8% 80px;
 }
 
-@media(max-width:479px){
-
-.presidents .album-entry{
-    flex-basis:100%;
+.presidents .album-list{
+    grid-template-columns:repeat(2,minmax(0,1fr));
 }
+
+@media(max-width:479px){
 
 .film-grid{
     grid-template-columns:1fr;
@@ -683,7 +695,6 @@ margin:8px;
 
 .presidents .album-list{
     grid-template-columns:1fr;
-    gap:22px;
 }
 
 .album-entry{

@@ -34,22 +34,3 @@ if (watchCarousel && previousButton && nextButton) {
 	nextButton.addEventListener('click', () => scrollVideos(1));
 }
 
-const presidentsCarousel = document.querySelector('.presidents .album-list');
-const presidentsPreviousButton = document.querySelector('.presidents-previous');
-const presidentsNextButton = document.querySelector('.presidents-next');
-
-if (presidentsCarousel && presidentsPreviousButton && presidentsNextButton) {
-	const scrollAlbums = (direction) => {
-		const album = presidentsCarousel.querySelector('.album-entry');
-		const gap = parseFloat(getComputedStyle(presidentsCarousel).gap) || 0;
-		const distance = album ? album.getBoundingClientRect().width + gap : presidentsCarousel.clientWidth;
-
-		presidentsCarousel.scrollBy({
-			left: direction * distance,
-			behavior: 'smooth'
-		});
-	};
-
-	presidentsPreviousButton.addEventListener('click', () => scrollAlbums(-1));
-	presidentsNextButton.addEventListener('click', () => scrollAlbums(1));
-}
