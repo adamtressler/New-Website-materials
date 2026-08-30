@@ -400,6 +400,22 @@ p{
     gap:17px 13px;
 }
 
+.film-imdb-link{
+    display:inline-block;
+    margin-top:32px;
+    color:#fff;
+    font-size:.8rem;
+    letter-spacing:.12em;
+    text-decoration:none;
+    text-transform:uppercase;
+    transition:color .3s;
+}
+
+.film-imdb-link:hover,
+.film-imdb-link:focus-visible{
+    color:#aaa;
+}
+
 .film-card{
     position:relative;
     overflow:hidden;
@@ -842,6 +858,11 @@ margin:8px;
 .film-grid{
     grid-template-columns:repeat(2,minmax(0,1fr));
     gap:11px 8px;
+}
+
+.film-imdb-link{
+    margin-top:26px;
+    font-size:.7rem;
 }
 
 .presidents{
