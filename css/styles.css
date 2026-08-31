@@ -1,5 +1,6 @@
 html{
     scroll-behavior:smooth;
+    scroll-padding-top:78px;
 }
 
 *{
@@ -403,8 +404,8 @@ p{
 .film-imdb-link{
     display:inline-block;
     margin-top:32px;
-    color:#fff;
-    font-size:.8rem;
+    color:#e7dfad;
+    font-size:.925rem;
     letter-spacing:.12em;
     text-decoration:none;
     text-transform:uppercase;
@@ -418,9 +419,10 @@ p{
 
 .film-card{
     position:relative;
-    overflow:hidden;
+    z-index:0;
     aspect-ratio:2 / 3;
     background:#222;
+    transition:transform .35s ease,box-shadow .35s ease;
 }
 
 .film-card img{
@@ -429,18 +431,29 @@ p{
     height:100%;
     object-fit:cover;
     filter:none;
-    transition:filter .35s ease,transform .35s ease;
+    transition:filter .35s ease;
+}
+
+.film-card::before{
+    position:absolute;
+    inset:0;
+    z-index:1;
+    background:rgba(0,0,0,.55);
+    content:'';
+    opacity:0;
+    transition:opacity .35s ease;
+    pointer-events:none;
 }
 
 .film-card-overlay{
     position:absolute;
     inset:0;
+    z-index:2;
     display:flex;
     flex-direction:column;
     align-items:center;
     justify-content:center;
     padding:24px 18px;
-    background:rgba(0,0,0,.5);
     text-align:center;
     color:#fff;
     opacity:0;
@@ -450,8 +463,19 @@ p{
 
 .film-card:hover img,
 .film-card:focus-within img{
-    filter:blur(2px) brightness(.72);
-    transform:scale(1.02);
+    filter:blur(1px);
+}
+
+.film-card:hover,
+.film-card:focus-within{
+    z-index:5;
+    transform:scale(1.1) translateY(-6px);
+    box-shadow:0 26px 48px rgba(0,0,0,.5);
+}
+
+.film-card:hover::before,
+.film-card:focus-within::before{
+    opacity:1;
 }
 
 .film-card:hover .film-card-overlay,
@@ -460,20 +484,39 @@ p{
     transform:translateY(0);
 }
 
-.film-card-overlay h3{
-    margin:0 0 7px;
+.film-title{
+    margin:0 0 10px;
     font-size:1rem;
-    font-weight:400;
+    font-weight:600;
     line-height:1.25;
 }
 
-.film-card-overlay p{
-    margin:0;
-    color:#ccc;
-    font-size:.68rem;
-    letter-spacing:.1em;
+.film-role{
+    margin:0 0 12px;
+    color:#f2f2f2;
+    font-size:.82rem;
+    font-weight:500;
+    letter-spacing:.09em;
     line-height:1.4;
     text-transform:uppercase;
+}
+
+.film-detail{
+    margin:0;
+    color:#c9c9c9;
+    font-size:.75rem;
+    font-weight:300;
+    letter-spacing:0;
+    line-height:1.4;
+    opacity:0;
+    transform:translateY(5px);
+    transition:opacity .35s ease,transform .35s ease;
+}
+
+.film-card:hover .film-detail,
+.film-card:focus-within .film-detail{
+    opacity:1;
+    transform:translateY(0);
 }
 
 .presidents{
@@ -550,6 +593,129 @@ p{
     margin:0 12% 120px;
 }
 
+body.watch-lightbox-open{
+    overflow:hidden;
+}
+
+.watch-lightbox{
+    position:fixed;
+    inset:0;
+    z-index:100;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:6vh 5vw;
+}
+
+.watch-lightbox[hidden]{
+    display:none;
+}
+
+.watch-lightbox-backdrop{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.85);
+    opacity:0;
+    transition:opacity .25s ease;
+}
+
+.watch-lightbox.is-open .watch-lightbox-backdrop{
+    opacity:1;
+}
+
+.watch-lightbox-dialog{
+    position:relative;
+    z-index:1;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    gap:10px;
+    width:min(920px,92vw,calc((88vh - 58px) * 16 / 9));
+    opacity:0;
+    transform:scale(.96);
+    transition:opacity .25s ease,transform .25s ease;
+}
+
+.watch-lightbox.is-open .watch-lightbox-dialog{
+    opacity:1;
+    transform:scale(1);
+}
+
+.watch-lightbox-close{
+    width:38px;
+    height:38px;
+    border:1px solid rgba(255,255,255,.5);
+    background:rgba(17,17,17,.75);
+    color:#fff;
+    font-size:1.3rem;
+    line-height:1;
+    cursor:pointer;
+    transition:background .3s,color .3s;
+}
+
+.watch-lightbox-close:hover,
+.watch-lightbox-close:focus-visible{
+    background:#fff;
+    color:#111;
+}
+
+.watch-lightbox-frame{
+    position:relative;
+    width:100%;
+    aspect-ratio:16 / 9;
+    background:#000;
+}
+
+.watch-lightbox-frame iframe{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    border:0;
+}
+
+.watch-lightbox-fallback{
+    position:absolute;
+    inset:0;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:14px;
+    padding:24px;
+    text-align:center;
+    color:#eee;
+}
+
+.watch-lightbox-fallback p{
+    margin:0;
+    font-size:.95rem;
+    letter-spacing:.04em;
+}
+
+.watch-lightbox-fallback a{
+    color:#e7dfad;
+    font-size:.9rem;
+    letter-spacing:.08em;
+    text-decoration:none;
+    text-transform:uppercase;
+    transition:color .3s;
+}
+
+.watch-lightbox-fallback a:hover,
+.watch-lightbox-fallback a:focus-visible{
+    color:#fff;
+}
+
+@media(prefers-reduced-motion:reduce){
+
+.watch-lightbox-backdrop,
+.watch-lightbox-dialog{
+    transition:none;
+}
+
+}
+
 .watch-heading{
     display:flex;
     align-items:flex-end;
@@ -598,14 +764,31 @@ p{
     gap:22px;
     overflow-x:auto;
     scroll-behavior:smooth;
+    scroll-snap-type:x proximity;
     scrollbar-width:thin;
     scrollbar-color:#555 transparent;
+    cursor:grab;
+    -webkit-mask-image:linear-gradient(to right,rgba(0,0,0,.6) 0,rgba(0,0,0,1) 4%,rgba(0,0,0,1) 96%,rgba(0,0,0,.6) 100%);
+    mask-image:linear-gradient(to right,rgba(0,0,0,.6) 0,rgba(0,0,0,1) 4%,rgba(0,0,0,1) 96%,rgba(0,0,0,.6) 100%);
+}
+
+.watch-carousel.is-dragging{
+    cursor:grabbing;
+    scroll-snap-type:none;
+    user-select:none;
 }
 
 .watch-video{
     flex:0 0 38%;
     color:#eee;
     text-decoration:none;
+    scroll-snap-align:start;
+    transition:transform .35s ease;
+}
+
+.watch-video:hover,
+.watch-video:focus-visible{
+    transform:translateY(-6px) scale(1.05);
 }
 
 .watch-thumbnail{
@@ -614,16 +797,22 @@ p{
     overflow:hidden;
     aspect-ratio:16 / 9;
     margin-bottom:14px;
+    transition:box-shadow .35s ease;
+}
+
+.watch-video:hover .watch-thumbnail,
+.watch-video:focus-visible .watch-thumbnail{
+    box-shadow:0 20px 38px rgba(0,0,0,.45);
 }
 
 .watch-thumbnail::after{
     position:absolute;
     inset:0;
-    background:rgba(0,0,0,.32);
+    background:rgba(0,0,0,.4);
     content:'';
     opacity:0;
     pointer-events:none;
-    transition:opacity .25s ease;
+    transition:opacity .3s ease;
 }
 
 .watch-thumbnail img{
@@ -632,7 +821,7 @@ p{
     height:100%;
     object-fit:cover;
     filter:none;
-    transition:filter .3s,transform .3s;
+    transition:filter .3s ease;
 }
 
 .watch-play{
@@ -647,7 +836,7 @@ p{
     opacity:.45;
     pointer-events:none;
     transform:translate(-50%,-50%) scale(.94);
-    transition:opacity .25s ease,transform .25s ease;
+    transition:opacity .3s ease,transform .3s ease;
 }
 
 .watch-play::after{
@@ -665,26 +854,51 @@ p{
 
 .watch-video:hover .watch-thumbnail img,
 .watch-video:focus-visible .watch-thumbnail img{
-    filter:brightness(.88);
-    transform:scale(1.015);
+    filter:brightness(.82);
 }
 
 .watch-video:hover .watch-thumbnail::after,
-.watch-video:focus-visible .watch-thumbnail::after,
-.watch-video:hover .watch-play,
-.watch-video:focus-visible .watch-play{
+.watch-video:focus-visible .watch-thumbnail::after{
     opacity:1;
 }
 
 .watch-video:hover .watch-play,
 .watch-video:focus-visible .watch-play{
-    transform:translate(-50%,-50%) scale(1);
+    opacity:1;
+    transform:translate(-50%,-50%) scale(1.12);
 }
 
-.watch-video span{
+.watch-video > span:last-child{
+    display:block;
     font-size:.85rem;
     letter-spacing:.04em;
+    opacity:.85;
+    transition:opacity .35s ease,transform .35s ease;
 }
+
+.watch-video:hover > span:last-child,
+.watch-video:focus-visible > span:last-child{
+    opacity:1;
+    transform:translateY(-2px);
+}
+
+@media(prefers-reduced-motion:reduce){
+
+.watch-carousel{
+    scroll-behavior:auto;
+}
+
+.watch-video,
+.watch-thumbnail,
+.watch-thumbnail img,
+.watch-thumbnail::after,
+.watch-play,
+.watch-video > span:last-child{
+    transition:none;
+}
+
+}
+
 
 .contact-section{
     margin:0 12% 70px;
@@ -747,6 +961,10 @@ p{
 }
 
 @media(max-width:700px){
+
+html{
+    scroll-padding-top:70px;
+}
 
 .site-nav{
     flex-wrap:wrap;
@@ -862,7 +1080,7 @@ margin:8px;
 
 .film-imdb-link{
     margin-top:26px;
-    font-size:.7rem;
+    font-size:.825rem;
 }
 
 .presidents{
@@ -947,6 +1165,24 @@ margin:8px;
 
 .watch-video{
     flex-basis:100%;
+}
+
+}
+
+@media(hover:none){
+
+.film-card img{
+    filter:blur(1px);
+}
+
+.film-card::before{
+    opacity:1;
+}
+
+.film-card-overlay,
+.film-detail{
+    opacity:1;
+    transform:translateY(0);
 }
 
 }
