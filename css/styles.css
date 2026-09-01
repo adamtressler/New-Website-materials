@@ -562,6 +562,15 @@ p{
     border-bottom:1px solid #444;
 }
 
+/* in the 3-column grid, only the true last item got a bottom border via :last-child above; give the rest of the last row one too */
+@media(min-width:701px){
+
+.presidents .album-entry:nth-last-child(-n+3){
+    border-bottom:1px solid #444;
+}
+
+}
+
 .album-entry h3{
     margin-bottom:25px;
     font-size:1.25rem;
@@ -925,7 +934,7 @@ body.watch-lightbox-open{
 
 .contact-email{
     display:inline-block;
-    color:#fff;
+    color:#e7dfad;
     font-size:1.1rem;
     letter-spacing:.08em;
     text-decoration:none;
@@ -974,6 +983,8 @@ html{
 
 .site-nav-toggle{
     display:block;
+    padding:12px;
+    margin:-12px;
 }
 
 .site-nav-links{
@@ -993,6 +1004,13 @@ h1{
 
 font-size:2.5rem;
 
+}
+
+.hero-content{
+    left:50%;
+    width:88%;
+    max-width:none;
+    transform:translate(-50%,-50%);
 }
 
 p{
@@ -1087,18 +1105,6 @@ margin:8px;
     margin:0 8% 80px;
 }
 
-.presidents .album-list{
-    grid-template-columns:repeat(2,minmax(0,1fr));
-}
-
-@media(max-width:479px){
-
-.film-grid{
-    grid-template-columns:1fr;
-    gap:13px;
-}
-
-}
 
 .presidents h2{
     margin-bottom:30px;
@@ -1110,12 +1116,14 @@ margin:8px;
     font-size:1rem;
 }
 
+/* Bandcamp "large" embeds are fixed-width and unreadable below ~350px, so keep a single, more compact column instead of 2-up */
 .presidents .album-list{
     grid-template-columns:1fr;
+    gap:0;
 }
 
 .album-entry{
-    padding:27px 0 32px;
+    padding:20px 0 24px;
 }
 
 .album-entry h3{
@@ -1183,6 +1191,67 @@ margin:8px;
 .film-detail{
     opacity:1;
     transform:translateY(0);
+}
+
+}
+
+/* Touch devices at phone widths: the centered blurred overlay overflows narrow 2-up cards, so show a compact caption below the poster instead */
+@media(hover:none) and (max-width:700px){
+
+.film-card{
+    display:flex;
+    flex-direction:column;
+    aspect-ratio:auto;
+}
+
+.film-card img{
+    aspect-ratio:2 / 3;
+    height:auto;
+    filter:none;
+}
+
+.film-card::before{
+    opacity:0;
+}
+
+.film-card-overlay{
+    position:static;
+    flex:1;
+    justify-content:flex-start;
+    padding:8px 4px 0;
+    text-align:left;
+    opacity:1;
+    transform:none;
+}
+
+.film-title{
+    margin:0 0 2px;
+    font-size:.75rem;
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    line-clamp:2;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+}
+
+.film-role{
+    margin:0;
+    font-size:.62rem;
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    line-clamp:2;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+}
+
+.film-detail{
+    display:none;
+}
+
+.film-card:hover,
+.film-card:focus-within{
+    transform:none;
+    box-shadow:none;
 }
 
 }
