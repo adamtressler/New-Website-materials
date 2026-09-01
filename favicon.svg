@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <g transform="translate(-2 0)" fill="none" stroke="#b7654e" stroke-width="2.6" stroke-linecap="square" stroke-linejoin="miter">
+    <!-- stylized A -->
+    <path d="M15 47 L30 14 L45 47"/>
+    <path d="M21 34 H39"/>
+    <!-- lowered stylized T -->
+    <path d="M19 27 H45"/>
+    <path d="M32 27 V51"/>
+    <!-- small serif details -->
+    <path d="M12 47 H22 M42 47 H48 M27 51 H37"/>
+  </g>
+</svg>
